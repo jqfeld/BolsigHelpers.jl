@@ -68,7 +68,7 @@ Returns callable interpolation of table `tablename` from Bolsig+ output data fil
 function interpolatetable(tablename, filename)
 	df = loadtable(tablename, filename)
 
-	LinearInterpolation(df[:E], df[tablename], extrapolation_bc=Line())
+	LinearInterpolation(df[!,:E], df[!,tablename], extrapolation_bc=Line())
 end
 
 
